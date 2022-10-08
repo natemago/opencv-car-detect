@@ -52,15 +52,15 @@ if __name__ == "__main__":
     while True:
         #success, img = cap.read()
         img = cv2.imread('./cars.jpg')
-        result, objectInfo = getObjects(img,0.45,0.2)
+        result, objectInfo = getObjects(img,0.45,0.2, objects=['car'])
         #print(objectInfo)
         #cv2.imshow("Output",img)
         #cv2.waitKey(1)
-        cars = 0
-        for r in objectInfo:
-            #print(r[1])
-            if r[1] == 'car':
-                cars += 1
-        print('Cars: ', cars)
+        # cars = 0
+        # for r in objectInfo:
+        #     #print(r[1])
+        #     if r[1] == 'car':
+        #         cars += 1
+        print('Cars: ', len(objectInfo))
 
         sleep(0.1)
